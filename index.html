@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>V. Varsha | Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #0f172a;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: #38bdf8;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            transition: 0.3s;
+            font-size: 16px;
+        }
+
+        nav ul li a:hover {
+            color: #38bdf8;
+        }
+
+        /* HERO SECTION */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 80px;
+            padding: 120px 10%;
+            background: linear-gradient(135deg, #0f172a, #1e293b, #2563eb);
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .hero-text h1 {
+            font-size: 65px;
+            margin-bottom: 15px;
+        }
+
+        .hero-text h1 span {
+            color: #38bdf8;
+        }
+
+        .hero-text h3 {
+            font-size: 28px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            color: #cbd5e1;
+        }
+
+        .hero-text p {
+            line-height: 1.9;
+            color: #d1d5db;
+            margin-bottom: 30px;
+            font-size: 17px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: #38bdf8;
+            color: #000;
+        }
+
+        .secondary {
+            border: 2px solid #38bdf8;
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        /* PROFILE IMAGE */
+
+        .hero-image img {
+            width: 350px;
+            height: 450px;
+            object-fit: cover;
+            object-position: center top;
+            border-radius: 30px;
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+            transition: 0.4s;
+        }
+
+        .hero-image img:hover {
+            transform: scale(1.03);
+        }
+
+        /* GENERAL SECTION */
+
+        section {
+            padding: 100px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 60px;
+            color: #38bdf8;
+        }
+
+        /* ABOUT */
+
+        .about {
+            background: #111827;
+        }
+
+        .about p {
+            max-width: 950px;
+            margin: auto;
+            text-align: center;
+            line-height: 2;
+            color: #d1d5db;
+            font-size: 17px;
+        }
+
+        /* CARDS */
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 20px;
+            transition: 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .card h3 {
+            color: #38bdf8;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: #d1d5db;
+            line-height: 1.8;
+        }
+
+        /* SKILLS */
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .skill {
+            background: #1e293b;
+            padding: 14px 30px;
+            border-radius: 30px;
+            transition: 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .skill:hover {
+            background: #38bdf8;
+            color: #000;
+            transform: translateY(-4px);
+        }
+
+        /* CONTACT */
+
+        .contact {
+            background: #111827;
+            text-align: center;
+        }
+
+        .contact p {
+            color: #d1d5db;
+            margin-bottom: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #38bdf8;
+        }
+
+        footer {
+            background: #0f172a;
+            text-align: center;
+            padding: 20px;
+            color: #94a3b8;
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:950px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 48px;
+            }
+
+            .hero-text h3 {
+                font-size: 22px;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .hero-image img {
+                width: 280px;
+                height: 360px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav>
+
+        <div class="logo">
+            Varsha<span>.</span>
+        </div>
+
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+    </nav>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-text">
+
+            <h1>Hi, I'm <span>V. Varsha</span></h1>
+
+            <h3>AI & ML Student | Web Developer</h3>
+
+            <p>
+                Passionate about creating modern, responsive, and user-friendly web applications while exploring
+                Artificial Intelligence and Machine Learning technologies.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#projects" class="btn primary">
+                    View Projects
+                </a>
+
+                <a href="#contact" class="btn secondary">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-image">
+
+            <!-- SAVE YOUR PHOTO AS profile.jpg -->
+            <img src="profile.jpg" alt="Varsha Photo">
+
+        </div>
+
+    </section>
+
+    <!-- ABOUT -->
+
+    <section class="about" id="about">
+
+        <h2 class="section-title">About Me</h2>
+
+        <p>
+            Hello! I'm V. Varsha, a B.Tech student specializing in Artificial Intelligence and Machine Learning at Nalla
+            Narasimha Reddy Group of Institutions (2023–2027).
+            <br><br>
+            I am passionate about web development, frontend design, and creating interactive digital experiences. I
+            enjoy building responsive and visually appealing websites using HTML, CSS, JavaScript, and modern web
+            technologies.
+            <br><br>
+            I have completed internships in Java Full Stack Development, Web Development, and project-based learning
+            programs which helped me strengthen my technical, problem-solving, and development skills.
+        </p>
+
+    </section>
+
+    <!-- EDUCATION -->
+
+    <section id="education">
+
+        <h2 class="section-title">Education</h2>
+
+        <div class="grid">
+
+            <div class="card">
+
+                <h3>B.Tech — Artificial Intelligence & Machine Learning</h3>
+
+                <p>
+                    Nalla Narasimha Reddy Group of Institutions
+                    <br>
+                    2023 – 2027
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- EXPERIENCE -->
+
+    <section id="experience">
+
+        <h2 class="section-title">Experience</h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>EduSkills</h3>
+                <p>Java Full Stack Development Intern</p>
+            </div>
+
+            <div class="card">
+                <h3>Vault of Code</h3>
+                <p>Web Development Intern</p>
+            </div>
+
+            <div class="card">
+                <h3>Prodigy InfoTech</h3>
+                <p>Web Development Intern</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SKILLS -->
+
+    <section id="skills">
+
+        <h2 class="section-title">Skills</h2>
+
+        <div class="skills-container">
+
+            <div class="skill">Programming</div>
+            <div class="skill">Artificial Intelligence</div>
+            <div class="skill">Machine Learning</div>
+            <div class="skill">Web Development</div>
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">Git & GitHub</div>
+
+        </div>
+
+    </section>
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+
+        <h2 class="section-title">Projects</h2>
+
+        <div class="grid">
+
+            <div class="card">
+
+                <h3>Interactive Navigation Menu</h3>
+
+                <p>
+                    Built a responsive navigation menu with hover effects and scroll interactions using HTML, CSS, and
+                    JavaScript.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Stopwatch Web Application</h3>
+
+                <p>
+                    Developed a modern stopwatch application with lap timing functionality and responsive UI design.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Tic-Tac-Toe Game</h3>
+
+                <p>
+                    Created an interactive Tic-Tac-Toe game with AI mode, winner detection, and score tracking.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACT -->
+
+    <section class="contact" id="contact">
+
+        <h2 class="section-title">Contact Me</h2>
+
+        <p>Email: varshaayadav0723@gmail.com</p>
+
+        <div class="social-links">
+
+            <a href="https://github.com/VarshaYadav-ML" target="_blank">
+                GitHub
+            </a>
+
+            <a href="https://www.linkedin.com/in/varsha-yadav-ai/" target="_blank">
+                LinkedIn
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+        © 2026 V. Varsha | Portfolio Website
+    </footer>
+
+</body>
+
+</html>
